@@ -32,41 +32,36 @@ This repository is organized to facilitate navigation and code execution:
  ┃ ┗ 📜 MAGIC_Report.html# Interactive report (HTML format)
  ┗ 📜 README.md          # This file
 ```
-📊 Analyses Performed
-Our R script successfully reproduces the following analytical steps:
+## 📊 Analyses Performed
 
-1. Descriptive Analysis: Boxplots assessing the impact of environmental variance (harvest years) on Grain Yield and Seed Weight.
+1. **Descriptive analysis:** boxplots of the effect of environmental variance (harvest years) on grain yield and seed weight.
+2. **Phenotypic correlations (BLUPs):** Pearson correlation matrices showing trade-offs between phenology, yield and micronutrient accumulation (iron and zinc).
+3. **Drought escape mechanism:** linear regression showing the negative relationship between days to flowering and yield under terminal drought.
+4. **Principal Component Analysis (PCA):** multivariate biplot of all traits to understand survival and biofortification strategies.
+5. **Genetic map density:** physical distribution of SNPs across the 11 common bean chromosomes.
+6. **Genetic selection:** ranking of the top 15 elite, high-yielding genotypes.
 
-2. Phenotypic Correlations (BLUPs): Pearson correlation matrices highlighting the trade-offs between phenology, yield, and micronutrient accumulation (Iron and Zinc).
+## 🚀 How to Reproduce
 
-3. Drought Escape Mechanism: Linear regression modeling proving the negative relationship between days to flowering and final yield under terminal drought stress.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/raruizc/LCF5900-MAGIC-Bean-Genetics.git
+   ```
+2. Install the R packages:
+   ```r
+   install.packages(c("tidyverse", "corrplot", "viridis", "gridExtra", "factoextra"))
+   ```
+3. Open `report/MAGIC_Report.Rmd` in RStudio and click **Knit**, or run `scripts/analise_magic.R` line by line. Data paths are relative, so set the working directory to the project root.
 
-4. Principal Component Analysis (PCA): A multivariate Biplot clustering all traits to understand the overall plant survival and biofortification strategies.
+## 📚 Data Sources and References
 
-5. Genetic Map Density: Visualization of the physical distribution of SNPs across the 11 chromosomes of the common bean genome.
+Full credit goes to the original authors for publishing their data openly:
 
-6. Genetic Selection: Ranking chart identifying the top 15 elite, high-yielding genotypes within the population.
+- **Original article:** Diaz, S., Ariza-Suarez, D., Izquierdo, P. et al. (2020). *BMC Genomics* 21, 799. [doi:10.1186/s12864-020-07213-6](https://doi.org/10.1186/s12864-020-07213-6)
+- **Dataset (Harvard Dataverse):** [doi:10.7910/DVN/JR4X4C](https://doi.org/10.7910/DVN/JR4X4C)
 
-🚀 How to Reproduce
-Anyone can audit, run, and expand upon this research. To reproduce the analyses locally:
+## 👥 Authorship
 
-Clone this repository:
+Team 04, Open Science class, LCF5900 course (ESALQ/USP, 2026). Repository maintained by **Ricardo Antonio Ruiz-Cardozo**.
 
-Bash
-git clone [https://github.com/YOUR_USERNAME/LCF5900-MAGIC-Bean-Genetics.git](https://github.com/YOUR_USERNAME/LCF5900-MAGIC-Bean-Genetics.git)
-Open the MAGIC_Report.Rmd file in RStudio (or the equivalent .R script).
-
-Ensure you have the following R packages installed:
-
-R
-install.packages(c("tidyverse", "corrplot", "viridis", "gridExtra", "factoextra"))
-Click Knit (if using RMarkdown) or run the script line by line. Since the data paths are relative, the code will run seamlessly as long as your working directory is set to the project root.
-
-📚 Data Sources and References
-In full compliance with Open Science principles, we give full credit to the original authors and their initiative to publish the data openly:
-
-Original Article: DOI: [10.1186/s12864-020-07213-6](https://doi.org/10.1186/s12864-020-07213-6)
-
-Dataset (Harvard Dataverse): DOI: https://doi.org/10.7910/DVN/JR4X4C
-
-Authorship & Contributions: Team 04 - Class Open Science | LCF5900 Course (2026)
+Code released under the [MIT License](LICENSE). Data keep their original license.
